@@ -1,0 +1,12 @@
+services:
+  app:
+    class:      'Framework\Kernel'
+    arguments:  [@service_container, @request]
+
+  request:
+    factoryStaticMethod: ['Symfony\Component\HttpFoundation\Request', 'createFromGlobals']
+
+  controller.default:
+    class: 'App\Controller\DefaultController'
+  controller.foo:
+    class: 'App\Controller\FooController'
